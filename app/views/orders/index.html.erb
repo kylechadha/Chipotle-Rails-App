@@ -1,0 +1,19 @@
+<h1>List of all Orders</h1>
+<table>
+<tr>
+  <th>User</th>
+  <th>Type</th>
+  <th>Meat</th>
+  <th>Cheese</th>
+  <th>Edit?</th>
+</tr>
+<% @orders.each do |order| %>
+<tr>
+  <td></td>
+  <td><%= order.type %></td>
+  <td><%= order.meat %></td>
+  <td><%= order.cheese %></td>
+  <td><%= link_to 'Edit', edit_order_path(order) %></td>
+</tr>
+<% end %>
+</table>

@@ -1,0 +1,23 @@
+<h1>How can I help you?</h1>
+
+<%= form_for @order do |f| %>
+  <div>
+    <%= f.label :type %>:
+    <%= f.select :type, options_for_select(['Burrito', 'Taco', 'Quesadilla', 'Salad Bowl']) %>
+  </div>
+
+  <div>
+    <%= f.label :meat %>
+    <%= check_box_tag 'order[meat][]', 'chicken', @order.meat.include?('chicken') %>
+    <%= check_box_tag 'order[meat][]', 'steak', @order.meat.include?('steak') %>
+    <%= check_box_tag 'order[meat][]', 'tofu', @order.meat.include?('tofu') %>
+  </div>
+  
+  <div>
+    <%= f.label :cheese %>:
+    <%= f.check_box :cheese %>Yes
+  </div>
+
+  <div><%= f.submit %></div>
+
+<% end %>

@@ -1,4 +1,13 @@
+<!--
+ToDo:
+1. Require partial
+2. Add authentication
+3. Add custom paramters
+4. Style with Boostrap
+-->
+
 <h1>List of all Orders</h1>
+<p style="color: tomato; font-size: 16px" id="notice"><%= notice %></p>
 <table>
 <tr>
   <th>User</th>
@@ -6,6 +15,7 @@
   <th>Meat</th>
   <th>Cheese</th>
   <th>Edit?</th>
+  <th>Cancel?</th>
 </tr>
 <% @orders.each do |order| %>
 <tr>
@@ -14,6 +24,7 @@
   <td><%= order.meat %></td>
   <td><%= order.cheese %></td>
   <td><%= link_to 'Edit', edit_order_path(order) %></td>
+  <td><%= link_to 'Cancel', order, method: :delete, data: { confirm: 'Are you sure?'} %></td>
 </tr>
 <% end %>
 </table>

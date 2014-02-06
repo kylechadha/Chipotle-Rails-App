@@ -3,7 +3,7 @@
 <%= form_for @order do |f| %>
   <div>
     <%= f.label :type %>:
-    <%= f.select :type, options_for_select(['Burrito', 'Taco', 'Quesadilla', 'Salad Bowl']) %>
+    <%= f.select :type, ['Burrito', 'Taco', 'Quesadilla', 'Salad Bowl'] %>
   </div>
 
   <div>

@@ -2,7 +2,6 @@ class OrdersController < ApplicationController
 
   def index
     @orders = Order.all
-
     # if params[:show] == "completed"
     #   @orders = Order.where(is_completed: true)
     # elsif params[:show] == "all"

@@ -1,23 +1,23 @@
-<h1>How can I help you?</h1>
+<h2>What would you like?</h2>
 
 <%= form_for @order do |f| %>
   <div>
-    <%= f.label :type %>:
+    <b><%= f.label :type %></b>:
     <%= f.select :type, ['Burrito', 'Taco', 'Quesadilla', 'Salad Bowl'] %>
   </div>
 
   <div>
-    <%= f.label :meat %>
-    <%= check_box_tag 'order[meat][]', 'chicken', @order.meat.include?('chicken') %>
-    <%= check_box_tag 'order[meat][]', 'steak', @order.meat.include?('steak') %>
-    <%= check_box_tag 'order[meat][]', 'tofu', @order.meat.include?('tofu') %>
+    <b><%= f.label :meat %></b>:
+    <%= check_box_tag 'order[meat][]', 'chicken', @order.meat.include?('chicken') %>Chicken
+    <%= check_box_tag 'order[meat][]', 'steak', @order.meat.include?('steak') %>Steak
+    <%= check_box_tag 'order[meat][]', 'tofu', @order.meat.include?('tofu') %>Tofu
   </div>
   
   <div>
-    <%= f.label :cheese %>:
+    <b><%= f.label :cheese %>?</b>:
     <%= f.check_box :cheese %>Yes
   </div>
-
+  <br>
   <div><%= f.submit %></div>
 
 <% end %>

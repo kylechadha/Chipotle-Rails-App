@@ -6,7 +6,7 @@ ToDo:
 4. Style with Boostrap
 -->
 
-<h1>List of all Orders</h1>
+<h2>Order Queue</h2>
 <p style="color: tomato; font-size: 16px" id="notice"><%= notice %></p>
 <table>
 <tr>
@@ -19,7 +19,7 @@ ToDo:
 </tr>
 <% @orders.each do |order| %>
 <tr>
-  <td></td>
+  <td><%= current_user.name %></td>
   <td><%= order.type %></td>
   <td><%= order.meat %></td>
   <td><%= order.cheese %></td>

@@ -1,6 +1,3 @@
-#Questions
-#1. Why is there no user.save like there is if order.save?
-
 class UsersController < ApplicationController
 
   def index
@@ -12,9 +9,10 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(params.require(:user).permit(:name, :password))
+    @user = User.create(params.require(:user).permit(:name, :password))
     if @user.save
-      redirect_to orders_new_path
+      # redirect_to orders_new_path
+      redirect_to root_path
     else
       render "new"
     end

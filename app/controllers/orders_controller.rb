@@ -1,4 +1,5 @@
 class OrdersController < ApplicationController
+  before_filter :login_required, only: [:destroy]
 
   def index
     @orders = Order.all

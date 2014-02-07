@@ -8,5 +8,3 @@
 
 User.destroy_all
 Order.destroy_all
-
-User.create([{name: 'Johnny'}, {name: 'Jennifer'}])

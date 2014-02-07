@@ -7,7 +7,6 @@ ToDo:
 -->
 
 <h2>Order Queue</h2>
-<p style="color: tomato; font-size: 16px" id="notice"><%= notice %></p>
 <table>
 <tr>
   <th>User</th>
@@ -19,7 +18,7 @@ ToDo:
 </tr>
 <% @orders.each do |order| %>
 <tr>
-  <!-- <td><%#= current_user.name %></td> -->
+  <td><%= current_user ? current_user.username : "Log in!" %></td>
   <td><%= order.type %></td>
   <td><%= order.meat %></td>
   <td><%= order.cheese %></td>

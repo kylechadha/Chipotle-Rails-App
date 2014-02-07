@@ -3,17 +3,17 @@ require 'bcrypt'
 class User
   include Mongoid::Document
 
-  attr_accessor :password, :name
+  attr_accessor :password
 
-  field :name, type: String
+  field :username, type: String
   field :password_salt, type: String
   field :password_hash, type: String
   has_many :orders
 
-  validates_confirmation_of :password
-  validates_presence_of :password, :on => :create
-  validates_presence_of :name
-  validates_uniqueness_of :name
+  # validates_confirmation_of :password
+  # validates_presence_of :password, :on => :create
+  # validates_presence_of :username
+  # validates_uniqueness_of :username
 
   def authenticated?(passwd)
     # self.password_hash == BCrypt::Engine.hash_secret(passwd, self.password_salt)

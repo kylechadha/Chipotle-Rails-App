@@ -9,7 +9,7 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.create(params.require(:user).permit(:name, :password))
+    @user = User.new(params.require(:user).permit(:username, :password))
     if @user.save
       # redirect_to orders_new_path
       redirect_to root_path

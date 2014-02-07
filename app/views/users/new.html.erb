@@ -5,9 +5,9 @@
 <% else %>
   <h2>Sign up to order your derricious Chipotle burrito!</h2>
   <%= form_for @user do |f| %>
-    <%= f.text_field :name, placeholder: "Enter your name" %><br>
+    <%= f.text_field :username, placeholder: "Enter your name" %><br>
     <%= f.password_field :password, placeholder: "Enter a password" %><br>
-    <%= f.password_field :password_confirmation, placeholder: "Confirm password" %><br>
+    <%#= f.password_field :password_confirmation, placeholder: "Confirm password" %><br>
   <%= f.submit "CreeEaAaAte New User" %>
   <% end %>
 <% end %>

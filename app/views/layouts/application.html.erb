@@ -10,10 +10,12 @@
   <header>
     <%= render 'layouts/navigation' %>
   </header>
-  <p class="notice"><%= flash[:notice] %></p>
+  <p style="color: tomato; font-size: 16px" class="notice"><%= flash[:notice] %></p>
   <p class="error"><%= flash[:error] %></p>
   
   <%= yield %>
+
+  <br><br><hr><%= current_user %>
 
 </body>
 </html>

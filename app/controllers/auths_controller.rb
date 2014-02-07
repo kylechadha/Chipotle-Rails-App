@@ -4,10 +4,10 @@ class AuthsController < ApplicationController
   end
 
   def create
-    user = User.find_by(name: params[:user][:name])
-    if user.authenticates_with_password?(params[:user][:password])
+    user = User.find_by(username: params[:user][:username])
+    if user.authenticated?(params[:user][:password])
       session[:user_id] = user.id
-      flash[:notice] = "Welcome, #{current_user.name}!"
+      flash[:notice] = "Welcome, #{current_user.username}!"
       redirect_to orders_path
     end
   end
